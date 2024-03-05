@@ -1,0 +1,431 @@
+::-webkit-scrollbar {
+    display: none;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    text-align: center;
+    margin-top: 1rem;
+    font-family: "TT Norms Pro";
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 900;
+    text-align: center;
+    margin-top: 1rem;
+    font-family: "Roboto", sans-serif;
+}
+
+p {
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-align: center;
+    margin: 1rem;
+    font-family: "Noto Sans", sans-serif;
+}
+
+a, a:hover{
+    cursor: url(assets/cursor.png), auto;
+    
+}
+
+:root {
+    --navbar-bg-color: #02000c;
+    --navbar-text-color: #fdfff2;
+    --navbar-bg-contrast: #8c2315;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+body {
+    height: 100vh;
+    /* line-height: 1.6; */
+    /* background-color: #F4E7D0; */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+    cursor: url(assets/cursor.png), auto;
+    scroll-behavior: smooth;
+    user-select: none;
+}
+
+/* HEADER */
+.container {
+    max-width: 1300px;
+    padding-left: 1.4rem;
+    padding-right: 1.4rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#navbar {
+    --navbar-height: 64px;
+    position: fixed;
+    height: var(--navbar-height);
+    background-color: var(--navbar-bg-color);
+    left: 0;
+    right: 0;
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); */
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    align-items: center;
+}
+
+.home-link {
+    font-size: 2rem;
+}
+
+.home-link,
+.navbar-link {
+    color: var(--navbar-text-color);
+    transition: color 0.2s ease-in-out;
+    text-decoration: none;
+    display: flex;
+    font-weight: 400;
+    align-items: center;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    user-select: none;
+}
+
+.navbar-link {
+    justify-content: center;
+    width: 100%;
+    padding: 0.4em 0.8em;
+    border-radius: 5px;
+}
+
+.navbar-link:focus,
+.navbar-link:hover {
+    background-color: var(--navbar-bg-contrast);
+}
+
+.navbar-logo {
+    margin-right: 0.5em;
+    align-items: flex-end;
+    display: flex;
+}
+
+.navbar-logo img {
+    width: 40px;
+    height: 40px;
+}
+
+.navbar-toggle {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.icon-bar {
+    display: block;
+    width: 25px;
+    height: 4px;
+    margin: 2px;
+    transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out,
+        opacity 0.2s ease-in-out;
+    background-color: var(--navbar-text-color);
+}
+
+#navbar.opened .navbar-toggle .icon-bar:first-child,
+#navbar.opened .navbar-toggle .icon-bar:last-child {
+    position: absolute;
+    margin: 0;
+    width: 30px;
+}
+
+#navbar.opened .navbar-toggle .icon-bar:first-child {
+    transform: rotate(45deg);
+}
+
+#navbar.opened .navbar-toggle .icon-bar:nth-child(2) {
+    opacity: 0;
+}
+
+#navbar.opened .navbar-toggle .icon-bar:last-child {
+    transform: rotate(-45deg);
+}
+
+#navbar-menu {
+    position: fixed;
+    top: var(--navbar-height);
+    bottom: 0;
+    transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out,
+        left 0.2s ease-in-out, right 0.2s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+}
+
+#navbar-menu.detached,
+#navbar-menu.attached {
+    left: 0;
+    right: 0;
+}
+
+#navbar.opened #navbar-menu {
+    /* background-color: rgba(0, 0, 0, 0.4); */
+    opacity: 1;
+    visibility: visible;
+}
+
+.navbar-links {
+    list-style-type: none;
+    max-height: 0;
+    overflow: hidden;
+    position: absolute;
+    background-color: var(--navbar-bg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#navbar.opened .navbar-links {
+    padding: 1em;
+    max-height: none;
+}
+
+.detached .navbar-links {
+    left: 0;
+    right: 0;
+    margin: 1.4rem;
+    border-radius: 5px;
+    /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); */
+}
+
+.attached .navbar-links {
+    left: 0;
+    right: 0;
+    /* box-shadow: 0 20px 20px rgba(0, 0, 0, 0.3); */
+}
+
+.navbar-item {
+    margin: 0.4em;
+    width: 100%;
+}
+
+@media screen and (min-width: 780px) {
+    .navbar-toggle {
+        display: none;
+    }
+
+    #navbar #navbar-menu,
+    #navbar.opened #navbar-menu {
+        visibility: visible;
+        opacity: 1;
+        position: static;
+        display: block;
+        height: 100%;
+    }
+
+    #navbar .navbar-links,
+    #navbar.opened .navbar-links {
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+        position: static;
+        flex-direction: row;
+        list-style-type: none;
+        max-height: max-content;
+        width: 100%;
+        height: 100%;
+    }
+
+    #navbar .navbar-link:last-child {
+        margin-right: 0;
+    }
+}
+
+#options {
+    display: flex;
+    flex-direction: column;
+}
+
+/* MAIN */
+main,
+#about,
+#talent, #weapon, #gallery {
+    padding-top: 64px;
+    /* padding-bottom: 1.4rem; */
+}
+
+aside {
+    position: fixed;
+    inset-block: 0;
+    inset-inline-end: 0;
+}
+
+main aside .social-media {
+    height: 100%;
+    display: flex;
+}
+
+main aside .social-media ul {
+    padding: 1.5rem 1rem;
+    margin: auto;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    background-color: #4a0b06;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+main aside .social-media li {
+    list-style-type: none;
+}
+
+main aside .social-media li a img{
+    /* text-decoration: none;
+    font-size: 1.5rem;
+    color: white;
+    transition: all 0.1s ease-in-out; */
+    width: 50px;
+}
+
+main aside .social-media li a:hover {
+    color: #4a0b06;
+}
+
+#about {
+    display: flex;
+    align-items: center;
+    /* This will vertically align the items if they have different heights */
+    gap: 20px;
+    /* This will add some space between the article and the image */
+    justify-content: space-around;
+    padding: 1rem;
+}
+
+#about img.hutao {
+    width: 40%;
+    /* Adjust this value as needed */
+    height: auto;
+}
+
+/* 
+#talent {
+    background-color: #8C5B61;
+} */
+
+#talent>h1 {
+    margin-bottom: 2rem;
+}
+
+div.card_places {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 5%;
+    padding-bottom: 6rem;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.card {
+    min-width: 300px auto;
+    max-width: 100%;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    background-color: #8c2315;
+    padding-top: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 400px;
+    max-height: 100%;
+    height: 100%;
+    transition: transform 0.2s ease-in-out;
+}
+
+.card-img {
+    width: 50%;
+    height: auto;
+    border: 5px solid hsla(0, 0%, 100%, 0.25);
+    border-radius: 50%;
+}
+
+.card-content {
+    padding: 2rem;
+    color: #fdfff2;
+}
+
+.card-title {
+    margin: 0;
+    font-weight: bold;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s ease-in-out;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card:hover .card-img {
+    border-color: #f17558;
+    /* Change to your preferred color */
+    box-shadow: 0 0 10px #f17558;
+    filter: brightness(1.2);
+}
+
+.story article p{
+    margin: 2rem;
+    text-align: justify;
+    margin-bottom: 10vh;
+    padding-right: 70px;
+}
+/* FOOTER */
+footer {
+    background-color: var(--navbar-bg-color);
+    color: var(--navbar-text-color);
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-content h3 {
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+    font-family: "TT Norms Pro";
+}
+
+.footer-content p {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    font-family: "Noto Sans", sans-serif;
+}
+
+.footer-bottom p {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-top: 1rem;
+    font-family: "Noto Sans", sans-serif;
+}
+
+/* Hide social media links */
+.footer-content .socials {
+    display: none;
+}

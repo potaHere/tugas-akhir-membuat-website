@@ -1,0 +1,32 @@
+/* CSS */
+@media (max-width: 768px) {
+    main {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    
+    }
+
+    #about {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    #about img.hutao {
+        width: 100%; /* Adjust this value as needed */
+    }
+
+    div.card_places {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .card {
+        width: auto;
+        height: auto;
+    }
+
+    .card-title {
+        font-size: 1.5rem;
+    }
+}

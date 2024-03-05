@@ -1,35 +1,160 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
+    <title>Hu Tao</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
-    <script src='main.js'></script>
+    <link rel='stylesheet' type='text/css' media='screen' href='mobile.css'>
 </head>
+
 <body>
-    <header>
-        <h1>My Website</h1>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
+    <header id="navbar">
+        <nav class="navbar-container container">
+            <a class="home-link">
+                <div class="navbar-logo"><img src="assets/pyro.png" alt="Logo"></div>
+                Hu Tao
+            </a>
+            <button type="button" class="navbar-toggle" aria-label="Toggle menu" aria-expanded="false"
+                aria-controls="navbar-menu">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div id="navbar-menu" class="detached">
+                <ul class="navbar-links">
+                    <li class="navbar-item"><a class="navbar-link" href="#main">Home</a></li>
+                    <li class="navbar-item"><a class="navbar-link" href="#talent">Talent</a></li>
+                    <li class="navbar-item"><a class="navbar-link" href="#weapon">Weapon</a></li>
+                    <li class="navbar-item"><a class="navbar-link" href="#story">Story</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
-        <main>
-            <aside>
-                <h2>News</h2>
-                <p>Some news</p>
-            </aside>
-            <div id="content">
-                <h2>Home</h2>
-                <article>Welcome to my website</article>
+    <main id="main">
+        <aside>
+            <div class="social-media">
+                <ul>
+                    <li>
+                        <a href="https://www.youtube.com/"><img src="assets/App icon - YouTube.jpeg" alt=""></a>
+                    </li>
+                    <li>
+                        <a href="https://www.whatsapp.com/"><img src="assets/App icon - Whatsapp.jpeg"></a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com"><img src="assets/App icon - Instagram.jpeg" alt=""></a>
+                    </li>
+                    <li>
+                        <a href="https://discord.com/"><img src="assets/App icon - Discord.jpeg" alt=""></a>
+                    </li>
+                </ul>
             </div>
-        </main>
-        <footer>
-            <p>&copy; 2023 My Website</p>
+        </aside>
+        <div id="about">
+            <article>
+                <h1>Hu Tao</h1>
+                <p>The 77th Director of the Wangsheng Funeral Parlor. <br>She took over the business at a rather young
+                    age.</p>
+            </article>
+            <img class="hutao" src="assets/hutao.png" alt="Hu Tao">
+        </div>
+        <div id="talent">
+            <h1>Talent</h1>
+            <p><b>Talents</b> are special abilities that characters possess. <br>They are split into two types:
+                <b>Combat</b> and <b>Passive</b>.</p>
+            <div class="card_places">
+                <div class="card">
+                    <img src="assets/battle_talent_0.png" alt="Image description" class="card-img">
+                    <div class="card-content">
+                        <h2 class="card-title">Normal Attack: Secret Spear of Wangsheng</h2>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="assets/battle_talent_1.png" alt="Image description" class="card-img">
+                    <div class="card-content">
+                        <h2 class="card-title">Elemental Skill: Guide to Afterlife</h2>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="assets/battle_talent_2.png" alt="Image description" class="card-img">
+                    <div class="card-content">
+                        <h2 class="card-title">Elemental Burst: Spirit Soother</h2>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="assets/const_talent_0.png" alt="Image description" class="card-img">
+                    <div class="card-content">
+                        <h2 class="card-title">Passive: Flutter By</h2>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="assets/const_talent_1.png" alt="Image description" class="card-img">
+                    <div class="card-content">
+                        <h2 class="card-title">Passive: Sanguine Rouge</h2>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="assets/const_talent_0.png" alt="Image description" class="card-img">
+                    <div class="card-content">
+                        <h2 class="card-title">Passive: The More the Merrier</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="weapon">
+            <h1>Weapon Recommendations</h1>
+            <div class="card_places">
+                <div class="card">
+                    <img src="assets/homa.webp" alt="Image description" class="card-img">
+                    <div class="card-content">
+                        <h2 class="card-title">Staff of Homa</h2>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="assets/soss.webp" alt="Image description" class="card-img">
+                    <div class="card-content">
+                        <h2 class="card-title">Staff of Scarlet Sands</h2>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="assets/pjws.webp" alt="Image description" class="card-img">
+                    <div class="card-content">
+                        <h2 class="card-title">Primordial Jade Winged-Spear</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="story">
+            <h1>Story</h1>
+            <div class="story">
+                <article>
+                    <p>
+                        The 77th Director of the Wangsheng Funeral Parlor, a young lady managing the parlor's operations. Despite her position, she's an amiable person who puts on no airs.
+Her antics are as plentiful as the sand on Yaoguang Shoal. She never ceases to shock people with her countless bizarre ideas.
+Hu Tao may seem like all play and no work, spending every free moment on leisure and being widely considered a laissez-faire business owner.
+It is only during funeral ceremonies, when she personally leads her undertakers through lamp-lit alleys, that she shows her dignified and solemn side.
+                    </p>
+                </article>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <h3>Hu Tao</h3>
+            <p>the best waifu</p>
+            <ul class="socials">
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Instagram</a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 My Website | Designed by Me</p>
+        </div>
+    </footer>
+    <script src='main.js'></script>
 </body>
+
 </html>
